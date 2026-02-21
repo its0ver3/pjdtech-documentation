@@ -19,9 +19,31 @@
       color: #555;
       font-weight: normal;
     }
+    .toggle-dark {
+      position: fixed;
+      top: 0.75em;
+      right: 0.75em;
+      background: none;
+      border: 1px solid #888;
+      border-radius: 6px;
+      padding: 0.3em 0.5em;
+      font-family: monospace;
+      font-size: 0.85em;
+      cursor: pointer;
+      color: inherit;
+      z-index: 10;
+    }
+    body.dark {
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+    body.dark h3 { color: #999; }
+    body.dark a { color: #8ab4f8; }
+    body.dark .toggle-dark { border-color: #666; }
   </style>
 </head>
 <body>
+  <button class="toggle-dark" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
   <p><a href="index.html">← back</a></p>
   <h1>Site Goes Live</h1>
   <h3>2026-02-21 10:32 AM</h3>
@@ -34,5 +56,14 @@
   </p>
   Stay tuned for updates!
   </p>
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+      const on = document.body.classList.contains('dark');
+      document.querySelector('.toggle-dark').textContent = on ? '☀️' : '🌙';
+      localStorage.setItem('dark', on);
+    }
+    if (localStorage.getItem('dark') === 'true') toggleDark();
+  </script>
 </body>
 </html>
