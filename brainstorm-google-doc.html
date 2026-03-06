@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainstorm Google Doc — JPD Tech</title>
+  <style>
+    body {
+      font-family: monospace;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1em;
+    }
+    h1 {
+      margin-bottom: 0;
+    }
+    h3 {
+      margin-top: 0.2em;
+      color: #555;
+      font-weight: normal;
+    }
+    .toggle-dark {
+      position: fixed;
+      top: 0.75em;
+      right: 0.75em;
+      background: none;
+      border: 1px solid #888;
+      border-radius: 8px;
+      padding: 0.4em 0.6em;
+      font-size: 1.4rem;
+      line-height: 1;
+      min-width: 44px;
+      min-height: 44px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 10;
+    }
+    body.dark {
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+    body.dark h3 { color: #999; }
+    body.dark a { color: #8ab4f8; }
+    body.dark .toggle-dark { border-color: #666; }
+  </style>
+</head>
+<body>
+  <button class="toggle-dark" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+  <p><a href="index.html">← back</a></p>
+  <h1>Brainstorm Google Doc</h1>
+  <h3>2026-03-06</h3>
+  <p>
+    Pascal created a shared Google Doc for the team to brain dump all the features and ideas we come up with. The idea is simple — instead of letting good ideas slip through the cracks during calls or random moments of inspiration, we now have a single place to capture everything.
+  </p>
+  <p>
+    Everyone on the team can add to the doc whenever something comes to mind — whether it's a must-have feature, a nice-to-have, or even a wild idea that might not make the cut. No filter, no judgement, just get it all down.
+  </p>
+  <p>
+    The plan is to review the doc together this weekend and prune it down to the essentials. We'll sort through everything, figure out what's realistic, what aligns with our problem statement, and what we actually want to build first. From there we can start shaping a focused feature set and prioritize accordingly.
+  </p>
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+      const on = document.body.classList.contains('dark');
+      document.querySelector('.toggle-dark').textContent = on ? '☀️' : '🌙';
+      localStorage.setItem('dark', on);
+    }
+    if (localStorage.getItem('dark') === 'true') toggleDark();
+  </script>
+</body>
+</html>
