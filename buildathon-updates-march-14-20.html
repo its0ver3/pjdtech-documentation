@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buildathon Updates — March 14-20 — JPD Tech</title>
+  <style>
+    body {
+      font-family: monospace;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1em;
+    }
+    h1 {
+      margin-bottom: 0;
+    }
+    h3 {
+      margin-top: 0.2em;
+      color: #555;
+      font-weight: normal;
+    }
+    .toggle-dark {
+      position: fixed;
+      top: 0.75em;
+      right: 0.75em;
+      background: none;
+      border: 1px solid #888;
+      border-radius: 8px;
+      padding: 0.4em 0.6em;
+      font-size: 1.4rem;
+      line-height: 1;
+      min-width: 44px;
+      min-height: 44px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 10;
+    }
+    body.dark {
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+    body.dark h3 { color: #999; }
+    body.dark a { color: #8ab4f8; }
+    body.dark .toggle-dark { border-color: #666; }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-dark" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+  <p><a href="index.html">← back</a></p>
+  <h1>Buildathon Updates — March 14-20</h1>
+  <h3>2026-03-20</h3>
+
+  <p>
+    We kicked things off last Saturday by diving deep into one topic we know will make or break us: pitching. Not just what we say, but how we say it.
+  </p>
+
+  <img src="pitch-books.png" alt="Three people reading How to Pitch and How to VCs books">
+
+  <h3>Saturday — March 14</h3>
+  <p>
+    We aligned on our goal for the hackathon and agreed that our pitch will be our strongest lever. If we can tell the story right, the product will follow.
+  </p>
+
+  <h3>Monday — March 16</h3>
+  <p>
+    Time to learn. We went through different materials on pitching, storytelling, and persuasion. Joanna went especially deep into the psychology side, exploring theories around how to make people act on something they don't initially want to do.
+  </p>
+
+  <h3>Wednesday — March 18</h3>
+  <p>
+    We started shaping our core narrative. What problem are we solving? Why does it matter? Why now? This is where Franks, our honest financial app, really started to take form beyond just an idea.
+  </p>
+
+  <img src="pitch-practice.png" alt="Team members typing, pitching at a microphone, and drawing dollar signs on a whiteboard">
+
+  <h3>Thursday — March 19</h3>
+  <p>
+    Drafting mode. We worked on structuring the pitch and building the first version of our presentation. Lots of iterations, lots of "this doesn't sound right yet."
+  </p>
+
+  <h3>Friday — March 20</h3>
+  <p>
+    We're now refining a tight 1-minute test pitch that we'll present on Saturday in front of PMs. The goal is simple: test the vibe, see what lands, and get brutally honest feedback.
+  </p>
+
+  <p>
+    Our approach is clear: we are treating the power of the pitch as our main selling tool. We want to learn how to communicate our idea in a way that actually resonates, not just informs.
+  </p>
+
+  <p>
+    Saturday will be our first real checkpoint. Let's see how it goes...
+  </p>
+
+  <img src="error-screen.png" alt="Humorous illustration of a deployment error causing panic">
+
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+      const on = document.body.classList.contains('dark');
+      document.querySelector('.toggle-dark').textContent = on ? '☀️' : '🌙';
+      localStorage.setItem('dark', on);
+    }
+    if (localStorage.getItem('dark') === 'true') toggleDark();
+  </script>
+</body>
+</html>
